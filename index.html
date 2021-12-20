@@ -26,19 +26,19 @@
     <div #container>
         <div id="addUser" style="display: none;">
 
-            <form action="index.html" onsubmit="from()">
+            <form id="addUserForm" action="index.html" onsubmit="addUserFrom()">
                 <h2>Add User</h2>
                 Enter name:
-                <input type="text" name="name" placeholder="Name" id="inp_name">
+                <input type="text" name="name" placeholder="Name" id="add_name">
                 Enter email:
-                <input type="email" name="email" placeholder="@email" id="inp_email">
+                <input type="email" name="email" placeholder="@email" id="add_email">
                 Enter phone:
-                <input type="text" name="Phone" placeholder="Phone number" id="inp_phone">
-                <input class="btn" id="submit_btn" type="submit" value="submit">
+                <input type="text" name="Phone" placeholder="Phone number" id="add_phone">
+                <input class="btn" id="submit_btn" type="submit" value="Add User">
             </form>
         </div>
 
-        <form id="loginForm" action="index.html" onsubmit="from().return.false" style="display: none;">
+        <form id="loginForm"   style="display: none;">
             <h2>Login</h2>
             Enter name:
             <input type="text" name="name" placeholder="Name" id="inp_name">
