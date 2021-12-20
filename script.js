@@ -1,12 +1,12 @@
 let i = 0;
 let arr = [];
-
+let output_val = ''
 
 //generate user
 function generateUser() {
 
     for (n = 0; n < i; n++) {
-        const output_val = n + ")  " + arr[n].userName
+        output_val += n + ")  " + arr[n].userName + "<br>"
         document.getElementById("output").innerHTML = output_val
     }
 
@@ -47,7 +47,7 @@ function loginUser() {
     document.getElementById("addUser").style = "display:none";
 
 }
-//Add user function
+//Add user function button function
 function addUser() {
     document.getElementById("addUser").style = "display:visible";
     document.getElementById("loginForm").style = "display:none"
@@ -58,19 +58,23 @@ function addUser() {
 document.getElementById("addUserForm").addEventListener("submit", function (e) {
     e.preventDefault();
 
-    let user = {
-        userName: newName,
-        email: userEmail,
-        phone: userPhone
-    }
+    let inpName = document.getElementById("inp_name").value;
+    let inpEmail = document.getElementById("inp_email").value;
+    let inpPhone = document.getElementById("inp_phone").value;
 
+    let user = {
+        userName: document.getElementById("add_name").value,
+        email: document.getElementById("add_email").value,
+        phone: document.getElementById("add_phone").value
+    }
+    alert(`${user.userName} is added to system `)
     arr[i] = user
     i++
-
+    output_val = '';
 })
 
 //form
-document.getElementById("loginForm").addEventListener("submit",(e) => {
+document.getElementById("loginForm").addEventListener("submit", (e) => {
 
     e.preventDefault();
     let inpName = document.getElementById("inp_name").value;
@@ -80,23 +84,23 @@ document.getElementById("loginForm").addEventListener("submit",(e) => {
     alert(`${inpName} loged in sucessfully`)
 
 
-    
+
     //  {
     //      if (inpName.charAt(0) == ' ') {
     //          alert("Name is not entered yet")
     //          document.getElementById("inp_name").style = "outline:2px solid red"
 
     //          return false
-    
+
     //      }
-    
+
     //      if (inpPhone.charAt(0) == ' ' || userPhone.length > 13) {
     //         alert("phone number is not valid")
     //          document.getElementById("inp_phone").style = "outline:2px solid red"
-             
+
     //      }
     //  }
-    
+
 })
 
 // document.getElementById("loginForm").addEventListener("submit",function(){
