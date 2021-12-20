@@ -13,9 +13,13 @@
     <header>
         Dashboard
     </header>
-    <h3>User Details</h3>
-    <div id="output">
-        Welcome
+    <h3>Welcome</h3>
+    <div id="screen">
+
+        System include following users:
+        <div id="output">
+            
+        </div>
     </div>
     <div id="buttons">
         <button class="btn" onclick="generateUser()">Generate User list</button>
@@ -26,7 +30,7 @@
     <div #container>
         <div id="addUser" style="display: none;">
 
-            <form id="addUserForm" action="index.html" onsubmit="addUserFrom()">
+            <form id="addUserForm">
                 <h2>Add User</h2>
                 Enter name:
                 <input type="text" name="name" placeholder="Name" id="add_name">
@@ -49,6 +53,12 @@
             <input class="btn" id="submit_btn" type="submit" value="submit">
         </form>
 
+
+        <form id="deleteUser"  style="display: none;" >
+            <h2>Delete User</h2>
+            <input type="email" name="email" placeholder="@email" id="deleteUser_email">
+            <input id="submit_btn" type="submit" value="DeleteUser">
+        </form>
     </div>
 </body>
 <script src="script.js"></script>

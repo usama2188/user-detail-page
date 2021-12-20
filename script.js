@@ -4,63 +4,76 @@ let output_val = ''
 
 //generate user
 function generateUser() {
+    document.getElementById("loginForm").style = "display:none"
+    document.getElementById("addUser").style = "display:none";
+    document.getElementById("deleteUser").style = "display:none";
+    document.getElementById("screen").style = "visibility:visible";
 
     for (n = 0; n < i; n++) {
         output_val += n + ")  " + arr[n].userName + "<br>"
         document.getElementById("output").innerHTML = output_val
     }
+}
 
-
-
+//user login button
+function loginUser() {
+    document.getElementById("loginForm").style = "display:visible"
+    document.getElementById("addUser").style = "display:none";
+    document.getElementById("deleteUser").style = "display:none";
+    document.getElementById("screen").style = "visibility:hidden";
 
 }
 
+//Add user function button function
+function addUser() {
+    document.getElementById("addUser").style = "display:visible";
+    document.getElementById("loginForm").style = "display:none"
+    document.getElementById("deleteUser").style = "display:none";
+    document.getElementById("screen").style = "visibility:hidden";
 
-//add new user
-// function addUser() {
-//     let newName = prompt("Enter name:")
-//     let userEmail = prompt("Enter Email:")
-//     let userPhone = prompt("Enter number:")
-//     let user = {
-//         userName: newName,
-//         email: userEmail,
-//         phone: userPhone
-//     }
-
-//     arr[i] = user
-//     i++
-// }
+}
 
 //delete a user
 function deleteUser() {
-    arr.pop();
-    console.log(arr)
-    i--;
-    alert("User deleted sucessfully")
-    document.getElementById("output").innerHTML = output_val
+    document.getElementById("addUser").style = "display:none";
+    document.getElementById("loginForm").style = "display:none"
+    document.getElementById("deleteUser").style = "display:visible";
+    document.getElementById("screen").style = "visibility:hidden";
 }
+
+
+// function deleteUserForm() 
+document.getElementById("deleteUser").addEventListener("submit",(e)=>{
+    e.preventDefault();
+    let deleteUser_email=document.getElementById("deleteUser_email").value
+    for(let m=0;m<arr.length;m++)
+    {
+        if(arr[m].email===deleteUser_email)
+        {
+            arr.splice(m,1)
+            alert("User  has been deleted")
+            output_val='';
+            generateUser();
+            break;
+        }
+        else
+        alert("User not found")
+    }
+})
+
 
 //user login
 function loginUser() {
     form = document.getElementById("loginForm")
     form.style = "display:visible"
     document.getElementById("addUser").style = "display:none";
+}
 
-}
-//Add user function button function
-function addUser() {
-    document.getElementById("addUser").style = "display:visible";
-    document.getElementById("loginForm").style = "display:none"
-}
 
 
 //Add user form
 document.getElementById("addUserForm").addEventListener("submit", function (e) {
     e.preventDefault();
-
-    let inpName = document.getElementById("inp_name").value;
-    let inpEmail = document.getElementById("inp_email").value;
-    let inpPhone = document.getElementById("inp_phone").value;
 
     let user = {
         userName: document.getElementById("add_name").value,
@@ -71,6 +84,8 @@ document.getElementById("addUserForm").addEventListener("submit", function (e) {
     arr[i] = user
     i++
     output_val = '';
+    generateUser();
+
 })
 
 //form
@@ -102,12 +117,3 @@ document.getElementById("loginForm").addEventListener("submit", (e) => {
     //  }
 
 })
-
-// document.getElementById("loginForm").addEventListener("submit",function(){
-//     userName=document.getElementById("inp_name").value;
-//     userEmail=document.getElementById("inp_email").value;
-//     userPhone=document.getElementById("inp_phone").value;
-
-//     if(userName.charAt(0)==' ' || userphone.charAt(0)==' ')
-//     return false;
-// })

@@ -16,6 +16,7 @@ h3{
     font-weight: 300;
     background-color: rgba(227, 244, 255, 0.637);
     border: 1px solid black;
+    text-align: right;
 
 
 
@@ -37,15 +38,19 @@ button{
     border: none;
 
 }
-#output{
+#screen{
     width: 20%;
-    height: 100px;
-    display: flex;
-    align-items: center;
+    min-height: 10rem;
     background-color: rgb(255, 255, 255);
-    width: 100%;
-    padding-left: 1rem;
+    width: 95%;
+    padding-left: 4rem;
+    padding-top: 1rem;
     font-size: larger;
+    margin: auto;
+}
+#output{
+    padding-left: 2rem;
+    padding-top: 1rem;
 }
 form{
     display: flex;
@@ -54,6 +59,8 @@ form{
     padding: 3rem;
     background-color: rgba(227, 244, 255, 0.637);
     margin-left: 3rem;
+    justify-content: center;
+    
 }
 form h2{
     margin-bottom: 5rem;padding: 20px;
@@ -76,4 +83,8 @@ form input:focus{
 .btn:hover,#submit_btn:hover{
     background-color: rgb(15, 164, 250);
     color: white;
+}
+
+.delete_btn{
+    margin: auto;
 }
