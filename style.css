@@ -1,0 +1,79 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    
+}
+header{
+    background-color: rgb(134, 206, 248);
+    text-align: center;
+    padding: 1rem;
+    color: white;
+    font-size: 2rem;
+}
+h3{
+    padding: 10px;
+    font-weight: 300;
+    background-color: rgba(227, 244, 255, 0.637);
+    border: 1px solid black;
+
+
+
+}
+#buttons{
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    /* border: 1px solid black; */
+    padding: 30px;
+    float: right;
+    margin-right: 3rem;
+}
+button{
+    padding: 5px;
+    height: rem;
+    margin-top: 10px;
+    background-color: rgb(134, 206, 248);
+    border: none;
+
+}
+#output{
+    width: 20%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    padding-left: 1rem;
+    font-size: larger;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    width: 52rem;
+    padding: 3rem;
+    background-color: rgba(227, 244, 255, 0.637);
+    margin-left: 3rem;
+}
+form h2{
+    margin-bottom: 5rem;padding: 20px;
+    border-bottom: 1px solid black;
+}
+form input{
+    margin:10px 0px;
+    padding: 8px;
+    outline: none;
+    border: none;
+}
+form input:focus{
+    outline: 1px solid rgb(27, 125, 206);
+}
+#submit_btn{
+    width: 5rem;
+    margin: 2rem auto;
+    background-color: rgb(134, 206, 248);
+}
+.btn:hover,#submit_btn:hover{
+    background-color: rgb(15, 164, 250);
+    color: white;
+}

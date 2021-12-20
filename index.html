@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        Dashboard
+    </header>
+    <h3>User Details</h3>
+    <div id="output">
+        Welcome
+    </div>
+    <div id="buttons">
+        <button class="btn" onclick="generateUser()">Generate User list</button>
+        <button class="btn" onclick="addUser()">Add user</button>
+        <button class="btn" onclick="deleteUser()">Delete User</button>
+        <button class="btn" onclick="loginUser()">Login</button>
+    </div>
+    <div #container>
+        <div id="addUser" style="display: none;">
+
+            <form action="index.html" onsubmit="from()">
+                <h2>Add User</h2>
+                Enter name:
+                <input type="text" name="name" placeholder="Name" id="inp_name">
+                Enter email:
+                <input type="email" name="email" placeholder="@email" id="inp_email">
+                Enter phone:
+                <input type="text" name="Phone" placeholder="Phone number" id="inp_phone">
+                <input class="btn" id="submit_btn" type="submit" value="submit">
+            </form>
+        </div>
+
+        <form id="loginForm" action="index.html" onsubmit="from().return.false" style="display: none;">
+            <h2>Login</h2>
+            Enter name:
+            <input type="text" name="name" placeholder="Name" id="inp_name">
+            Enter email:
+            <input type="email" name="email" placeholder="@email" id="inp_email">
+            Enter phone:
+            <input type="text" name="Phone" placeholder="Phone number" id="inp_phone">
+            <input class="btn" id="submit_btn" type="submit" value="submit">
+        </form>
+
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
