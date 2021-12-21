@@ -1,13 +1,14 @@
 *{
-    margin: 0px;
+    margin: auto;
     padding: 0px;
     box-sizing: border-box;
+    width: 98%;
     
 }
 header{
     background-color: rgb(134, 206, 248);
-    text-align: center;
-    padding: 1rem;
+    text-align: justify;
+    padding: .5rem 3rem;
     color: white;
     font-size: 2rem;
 }
@@ -15,7 +16,6 @@ h3{
     padding: 10px;
     font-weight: 300;
     background-color: rgba(227, 244, 255, 0.637);
-    border: 1px solid black;
     text-align: right;
 
 
@@ -25,7 +25,7 @@ h3{
     display: flex;
     flex-direction: column;
     width: 20rem;
-    /* border: 1px solid black; */
+    border: 1px solid rgb(210, 230, 236);
     padding: 30px;
     float: right;
     margin-right: 3rem;
@@ -43,7 +43,7 @@ button{
     min-height: 10rem;
     background-color: rgb(255, 255, 255);
     width: 95%;
-    padding-left: 4rem;
+    padding-left: 2rem;
     padding-top: 1rem;
     font-size: larger;
     margin: auto;
@@ -52,14 +52,19 @@ button{
     padding-left: 2rem;
     padding-top: 1rem;
 }
+#container{
+    padding: rem;
+
+}
 form{
     display: flex;
     flex-direction: column;
-    width: 52rem;
+    width: 40rem;
     padding: 3rem;
-    background-color: rgba(227, 244, 255, 0.637);
-    margin-left: 3rem;
+    margin-left: 2rem;
     justify-content: center;
+    background-color: rgba(216, 236, 250, 0.637);
+    border: 1px solid rgb(169, 175, 177);
     
 }
 form h2{
