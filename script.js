@@ -40,28 +40,28 @@ document.getElementById("addUserForm").addEventListener("submit", function (e) {
         email: add_email,
         phone: add_phone
     }
+
     if (add_name.charAt(0) == ' ' || add_name == '') {
         alert("Name is not entered yet")
         document.getElementById("add_name").style = "outline:2px solid red";
+    }
+    else if (add_phone.charAt(0) == ' ' || add_phone.length < 11) {
+        alert("phone number is not valid")
+        document.getElementById("add_phone").style = "outline:2px solid red"
 
-        let inp = false;
+    }
 
-        if (add_phone.charAt(0) == ' ' || add_phone.length < 11) {
-            alert("phone number is not valid")
-            document.getElementById("add_phone").style = "outline:2px solid red"
-            inp = false
+    else{
 
-        }
-
-        alert(`${inpName} loged in sucessfully`)
         alert(`${user.userName} is added to system `)
         arr[i] = user
         i++
         output_val = '';
         generateUser();
-       
+    }
+        
 
-    })
+})
 
 
 
