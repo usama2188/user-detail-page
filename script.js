@@ -30,19 +30,38 @@ function addUser() {
 //ADD USER FORM
 document.getElementById("addUserForm").addEventListener("submit", function (e) {
     e.preventDefault();
+    let add_name = document.getElementById("add_name").value
+    let add_email = document.getElementById("add_email").value
+    let add_phone = document.getElementById("add_phone").value
+
 
     let user = {
-        userName: document.getElementById("add_name").value,
-        email: document.getElementById("add_email").value,
-        phone: document.getElementById("add_phone").value
+        userName: add_name,
+        email: add_email,
+        phone: add_phone
     }
-    alert(`${user.userName} is added to system `)
-    arr[i] = user
-    i++
-    output_val = '';
-    generateUser();
+    if (add_name.charAt(0) == ' ' || add_name == '') {
+        alert("Name is not entered yet")
+        document.getElementById("add_name").style = "outline:2px solid red";
 
-})
+        let inp = false;
+
+        if (add_phone.charAt(0) == ' ' || add_phone.length < 11) {
+            alert("phone number is not valid")
+            document.getElementById("add_phone").style = "outline:2px solid red"
+            inp = false
+
+        }
+
+        alert(`${inpName} loged in sucessfully`)
+        alert(`${user.userName} is added to system `)
+        arr[i] = user
+        i++
+        output_val = '';
+        generateUser();
+       
+
+    })
 
 
 
@@ -93,7 +112,7 @@ document.getElementById("loginForm").addEventListener("submit", (e) => {
 
     //FORM VELIDATION
     {
-        if (inpName.charAt(0) == ' ') {
+        if (inpName.charAt(0) == ' ' || inpName == '') {
             alert("Name is not entered yet")
             document.getElementById("inp_name").style = "outline:2px solid red"
 

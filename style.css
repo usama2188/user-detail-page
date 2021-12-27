@@ -47,6 +47,7 @@ button{
     padding-top: 1rem;
     font-size: larger;
     margin: auto;
+    border-bottom: 1px solid gainsboro;
 }
 #output{
     padding-left: 2rem;
@@ -59,7 +60,7 @@ button{
 form{
     display: flex;
     flex-direction: column;
-    width: 40rem;
+    max-width: 80%;
     padding: 3rem;
     margin-left: 2rem;
     justify-content: center;
@@ -92,4 +93,42 @@ form input:focus{
 
 .delete_btn{
     margin: auto;
+}
+/* media query */
+@media only screen and (max-width:400px)
+{
+    body{
+        font-size: small;
+    }
+    form{
+      
+        width: 85%;
+        padding: 20px;
+        margin-left: 0px;
+        margin: auto;
+    }
+    form h2{
+        margin-bottom: 10px;
+        padding: 5px;
+    }
+    form input{
+        padding: 3px;
+    }
+
+    #buttons{
+        width: 80%;
+        float: none;
+        margin: auto;
+    }
+    button{
+        padding: 5px;
+        margin-top: 10px;
+        background-color: rgb(134, 206, 248);
+        border: none;
+    
+    }
+    #output{
+        padding-left: 0rem;
+        padding-top: 2rem;
+    }
 }
