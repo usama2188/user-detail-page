@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>User_detail</title>
 </head>
 
 <body>
@@ -14,18 +14,23 @@
         Dashboard
     </header>
     <h3>Welcome</h3>
-    <div id="screen" style="visibility:hidden" >  
+    <div id="gridContainer">
 
-        System include following users:
-        <div id="output">
-            
+        <div id="screen" style="visibility:hidden">
+
+            System include following users:
+            <div id="output">
+
+            </div>
         </div>
-    </div>
-    <div id="buttons">
-        <button class="btn" onclick="generateUser()">Generate User list</button>
-        <button class="btn" onclick="addUser()">Add user</button>
-        <button class="btn" onclick="deleteUser()">Delete User</button>
-        <button class="btn" onclick="loginUser()">Login</button>
+        <div id="buttons">
+            <button class="btn" onclick="generateUser()">Generate User list</button>
+            <button class="btn" onclick="addUser()">Add user</button>
+            <button class="btn" onclick="deleteUser()">Delete User</button>
+            <button class="btn" onclick="loginUser()">Login</button>
+        </div>
+
+
     </div>
     <div id="container">
         <div id="addUser" style="display: none;">
@@ -42,7 +47,7 @@
             </form>
         </div>
 
-        <form id="loginForm"   style="display: none;">
+        <form id="loginForm" style="display: none;">
             <h2>Login</h2>
             Enter name:
             <input type="text" name="name" placeholder="Name" id="inp_name">
@@ -54,13 +59,13 @@
         </form>
 
 
-        <form id="deleteUser"  style="display: none;" >
+        <form id="deleteUser" style="display: none;">
             <h2>Delete User</h2>
             <input type="email" name="email" placeholder="@email" id="deleteUser_email">
             <input id="submit_btn" type="submit" value="DeleteUser">
         </form>
     </div>
-   
+
 </body>
 <script src="script.js"></script>
 
