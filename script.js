@@ -1,5 +1,6 @@
-let i = 0;
-let n
+// let i = 0;
+let i = localStorage.length;
+let n;
 let arr = [];
 let output_val = ''
 
@@ -13,10 +14,21 @@ function generateUser() {
         document.getElementById("output").innerHTML = "No user found in system"
     }
 
-    for (n = 0; n < i; n++) {
-        output_val += n + ")  " + arr[n].userName + "<br>"
+    // for (n = 0; n < i; n++) {
+    //     output_val += n + ")  " + arr[n].userName + "<br>"
+    //     document.getElementById("output").innerHTML = output_val
+    // }
+
+
+    //LOCAL STORAGE
+    for (n = 0; n < localStorage.length; n++) {
+        let userStorage = localStorage.key(n)
+        val = JSON.parse(localStorage.getItem(userStorage))
+        output_val += n + ")  " + val.userName + "<br>"
         document.getElementById("output").innerHTML = output_val
     }
+
+
 }
 
 //Add user function button function
@@ -51,15 +63,16 @@ document.getElementById("addUserForm").addEventListener("submit", function (e) {
 
     }
 
-    else{
+    else {
 
         alert(`${user.userName} is added to system `)
         arr[i] = user
+        setUserStorage(user.userName, user) //SET USER VALUE IN LOCAL STORAGE
         i++
         output_val = '';
         generateUser();
     }
-        
+
 
 })
 
@@ -76,20 +89,42 @@ function deleteUser() {
 //DELETE USER FUNCTION
 document.getElementById("deleteUser").addEventListener("submit", (e) => {
     e.preventDefault();
+    let isDeleted = false
     let deleteUser_email = document.getElementById("deleteUser_email").value
-    for (let m = 0; m < arr.length; m++) {
-        if (arr[m].email === deleteUser_email) {
-            arr.splice(m, 1)
+    // for (let m = 0; m < arr.length; m++) {
+    //     if (arr[m].email === deleteUser_email) {
+    //         arr.splice(m, 1)
+    //         alert("User  has been deleted")
+    //         output_val = '';
+    //         isDeleted = true;
+    //         i--;
+    //         generateUser();
+    //         break;
+    //     }
+    for (let m = 0; m < localStorage.length; m++) {
+        // val = JSON.parse(localStorage.getItem(`user${m}`))
+        userStorage = localStorage.key(m)
+        val = JSON.parse(localStorage.getItem(userStorage))
+        if (val.email == deleteUser_email) {
+            localStorage.removeItem(userStorage)
             alert("User  has been deleted")
             output_val = '';
             isDeleted = true;
-            i--;
+            // i--
             generateUser();
             break;
         }
+        else {
+            output_val = '';
+            alert("User not found")
+            generateUser();
+        }
     }
-    if (isDeleted == false)
-        alert("User not found")
+    // if (isDeleted == false)
+    //     output_val = '';
+    // alert("User not found")
+    // generateUser();
+
 })
 
 
@@ -131,3 +166,13 @@ document.getElementById("loginForm").addEventListener("submit", (e) => {
 
 
 })
+
+function setUserStorage(item, userDetail) {
+    let setUser = localStorage.setItem(item, JSON.stringify(userDetail))
+    return setUser
+}
+function getUserStorage(itemName) {
+    let getUser = localStorage.getItem(itemName)
+    JSON.parse(getUser)
+    return getUser
+}

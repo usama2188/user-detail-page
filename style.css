@@ -16,12 +16,12 @@ h3{
     padding: 10px;
     font-weight: 300;
     background-color: rgba(227, 244, 255, 0.637);
-    text-align: right;
+    text-align: center;
 }
 #buttons{
     display: flex;
     flex-direction: column;
-    margin: auto;
+    /* margin: auto; */
  
 }
 button{
@@ -47,8 +47,9 @@ button{
 #gridContainer{
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    align-items:center;
+    /* justify-content:space-between; */
+    justify-content: space-around;
 }
 
 form{
@@ -56,9 +57,11 @@ form{
     flex-direction: column;
     max-width: 80%;
     padding: 3rem;
-    margin-left: 2rem;
+    /* margin-left: 2rem; */
+    margin: auto;
     justify-content: center;
     background-color: rgba(216, 236, 250, 0.637);
+    margin-top: 10px;
     border: 1px solid rgb(169, 175, 177);
     
 }
@@ -94,7 +97,6 @@ form input:focus{
         font-size: small;
     }
     form{
-      
         width: 100%;
         padding: 20px;
         margin-left: 0px;
@@ -109,7 +111,10 @@ form input:focus{
     }
     #buttons{
         margin: 0%;
+        padding-bottom: 10px;
+        
     }
+    
    
     #output{
         padding:0%;
