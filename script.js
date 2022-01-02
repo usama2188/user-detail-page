@@ -1,6 +1,6 @@
 // let i = 0;
-let i = localStorage.length;
-let n;
+// let i = localStorage.length;
+// let n;
 let arr = [];
 let output_val = ''
 
@@ -21,7 +21,9 @@ function generateUser() {
 
 
     //LOCAL STORAGE
-    for (n = 0; n < localStorage.length; n++) {
+    let i=localStorage.length
+    output_val = ''
+    for (let n = 0; n < localStorage.length; n++) {
         let userStorage = localStorage.key(n)
         val = JSON.parse(localStorage.getItem(userStorage))
         output_val += n + ")  " + val.userName + "<br>"
@@ -64,12 +66,12 @@ document.getElementById("addUserForm").addEventListener("submit", function (e) {
     }
 
     else {
-
-        alert(`${user.userName} is added to system `)
-        arr[i] = user
-        setUserStorage(user.userName, user) //SET USER VALUE IN LOCAL STORAGE
-        i++
+        // let i = localStorage.length;
+        //  arr[i] = user
+        // i++
         output_val = '';
+        setUserStorage(user.userName, user) //SET USER VALUE IN LOCAL STORAGE
+        alert(`${user.userName} is added to system `)
         generateUser();
     }
 
@@ -114,11 +116,16 @@ document.getElementById("deleteUser").addEventListener("submit", (e) => {
             generateUser();
             break;
         }
-        else {
-            output_val = '';
-            alert("User not found")
-            generateUser();
-        }
+    }
+    if (isDeleted == false) {
+        output_val = '';
+        alert("User not found")
+        generateUser();
+    }
+    if (localStorage.length < 1) {
+        alert("User not found")
+        generateUser();
+
     }
     // if (isDeleted == false)
     //     output_val = '';
@@ -140,6 +147,7 @@ function loginUser() {
 document.getElementById("loginForm").addEventListener("submit", (e) => {
 
     e.preventDefault();
+    let isSubmit = true
     let inpName = document.getElementById("inp_name").value;
     let inpEmail = document.getElementById("inp_email").value;
     let inpPhone = document.getElementById("inp_phone").value;
@@ -150,7 +158,6 @@ document.getElementById("loginForm").addEventListener("submit", (e) => {
         if (inpName.charAt(0) == ' ' || inpName == '') {
             alert("Name is not entered yet")
             document.getElementById("inp_name").style = "outline:2px solid red"
-
             return false
 
         }
@@ -162,6 +169,7 @@ document.getElementById("loginForm").addEventListener("submit", (e) => {
 
         }
     }
+
     alert(`${inpName} loged in sucessfully`)
 
 
@@ -170,9 +178,4 @@ document.getElementById("loginForm").addEventListener("submit", (e) => {
 function setUserStorage(item, userDetail) {
     let setUser = localStorage.setItem(item, JSON.stringify(userDetail))
     return setUser
-}
-function getUserStorage(itemName) {
-    let getUser = localStorage.getItem(itemName)
-    JSON.parse(getUser)
-    return getUser
 }
